@@ -8,22 +8,42 @@ A skeleton for creating applications with [CakePHP](https://cakephp.org) 4.x.
 
 The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
 
-## Installation
+## ✨Local Setup
 
-1. Download [Composer](https://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
+### **Before downloading/cloning this repo, make sure that you have php and composer installed on your machine.**
 
-If Composer is installed globally, run
+Check if already installed by `php --version` and `composer --version`
+    
+To know more about Composer, click [here](https://getcomposer.org/)
 
-```bash
-composer create-project --prefer-dist cakephp/app
-```
-
-In case you want to use a custom app dir name (e.g. `/myapp/`):
+#### Now follow these commands to setup the project 👇
 
 ```bash
-composer create-project --prefer-dist cakephp/app myapp
+git clone https://github.com/james3gh/cakephp4.3-project.git
 ```
+
+```bash
+cd cakephp4.3-project
+```
+
+```bash
+composer install
+```
+
+## Configuration
+
+* **Create a new database (say cakephp-proj) in phpmyadmin**
+
+* **Create a table named `books` inside it with the given structure**
+
+<img src="https://user-images.githubusercontent.com/87705437/147845015-5c645ee6-6c6a-4ef4-9606-6e6ca65a0187.png" width="700px"/>
+
+* **Inside the project folder, open `config` folder. Open a file named `app_local.php` inside it.**<br> 
+**Setup the username, password, db_name which you created in the above steps. By default username will be `root` with `no password` .**
+
+<img src="https://user-images.githubusercontent.com/87705437/147845109-9ac475d6-0ed7-4cde-ae4b-5e05709131b4.png" width="600px"/>
+
+Other environment agnostic settings can be changed in `config/app.php`.
 
 You can now either use your machine's webserver to view the default home page, or start
 up the built-in webserver with:
@@ -32,19 +52,9 @@ up the built-in webserver with:
 bin/cake server -p 8765
 ```
 
-Then visit `http://localhost:8765` to see the welcome page.
+Then visit `http://localhost:8765/book` to see the project.
 
-## Update
 
-Since this skeleton is a starting point for your application and various files
-would have been modified as per your needs, there isn't a way to provide
-automated upgrades, so you have to do any updates manually.
-
-## Configuration
-
-Read and edit the environment specific `config/app_local.php` and setup the 
-`'Datasources'` and any other configuration relevant for your application.
-Other environment agnostic settings can be changed in `config/app.php`.
 
 ## Layout
 
